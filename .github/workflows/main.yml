@@ -1,0 +1,31 @@
+# .github/workflows/main.yml
+name: PHP CI con PHPUnit
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test_php:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-versions: ['8.1'] # Usamos solo una version por simplicidad
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+        extensions: mbstring, pdo_mysql 
+        coverage: none
+
+    - name: Install Composer dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Run PHPUnit tests
+      run: vendor/bin/phpunit tests/BasicTest.php
