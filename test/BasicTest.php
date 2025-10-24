@@ -7,7 +7,8 @@ class BasicTest extends TestCase
     public function testLaFuncionSumaCorrectamente()
     {
         // 5 + 3 debe ser igual a 8
-        $resultado = sumar(5, 3);
+        //prueba mala
+        $resultado = sumar(4, 3);
         $this->assertEquals(8, $resultado);
     }
 }
