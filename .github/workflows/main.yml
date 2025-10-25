@@ -27,7 +27,6 @@ jobs:
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
-    - name: Run PHPUnit tests
-      # CAMBIO: Se corrige la ruta para buscar en la carpeta 'tests/'
-      # Esto es más robusto y permite a PHPUnit encontrar el archivo BasicTest.php.
+      - name: Run PHPUnit tests
         run: composer test
+        
