@@ -27,6 +27,6 @@ jobs:
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
-      - name: Run PHPUnit tests
-        run: composer test
-        
+    - name: Run PHPUnit tests
+      # Se usa el script 'test' de composer.json para ejecutar PHPUnit
+      run: composer test
