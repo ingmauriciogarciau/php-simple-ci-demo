@@ -5,7 +5,12 @@
     "autoload": {
         "files": ["index.php"]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "scripts": {
-        "test": "phpunit tests"
+        "test": "phpunit"
     }
 }
