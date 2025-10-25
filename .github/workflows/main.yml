@@ -28,4 +28,6 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: Run PHPUnit tests
-      run: vendor/bin/phpunit tests/BasicTest.php
+      # CAMBIO: Se corrige la ruta para buscar en la carpeta 'tests/'
+      # Esto es más robusto y permite a PHPUnit encontrar el archivo BasicTest.php.
+      run: vendor/bin/phpunit tests/
