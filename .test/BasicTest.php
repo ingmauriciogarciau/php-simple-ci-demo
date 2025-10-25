@@ -8,7 +8,7 @@ class BasicTest extends TestCase
     {
         // 5 + 3 debe ser igual a 8
         //prueba mala
-        $resultado = sumar(10, 10);
+        $resultado = sumar(1, 10);
         $this->assertEquals(20, $resultado);
     }
 }
